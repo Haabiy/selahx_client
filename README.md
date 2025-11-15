@@ -80,7 +80,7 @@ slx save --key-file key.pem --user ubuntu --host ec2-xx-xx-xx-xx.compute-1.amazo
 slx --key-file key.pem --port 1221 --ssh-host ubuntu@ec2-xx-xx-xx-xx.compute-1.amazonaws.com
 ```
 
-- overview: https://pypi.org/project/selahx_server
+- server package: https://pypi.org/project/selahx_server
 
 - github: https://github.com/Haabiy/selahx_server
 
