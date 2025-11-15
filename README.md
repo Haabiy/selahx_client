@@ -76,13 +76,13 @@ slx save --key-file key.pem --user ubuntu --host ec2-xx-xx-xx-xx.compute-1.amazo
 
 1. Launch the server:
 
-```bash
-slx --key-file key.pem --port 1221 --ssh-host ubuntu@ec2-xx-xx-xx-xx.compute-1.amazonaws.com
-```
-
 - server package: https://pypi.org/project/selahx_server
 
 - github: https://github.com/Haabiy/selahx_server
+
+```bash
+slx --key-file key.pem --port 1221 --ssh-host ubuntu@ec2-xx-xx-xx-xx.compute-1.amazonaws.com
+```
 
 2. Connect a client from your local machine:
 
