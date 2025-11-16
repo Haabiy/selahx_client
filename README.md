@@ -65,7 +65,7 @@ slx save --key-file key.pem --ssh-host ubuntu@ec2-xx-xx-xx-xx.compute-1.amazonaw
 **Options:**
 
 * `--key-file` — Path to the SSH private key
-* `--ssh-host` — `ubuntu` (e.g `ubuntu@ec2-xx-xx-xx-xx.compute-1.amazonaws.com`)
+* `--ssh-host` — E.g `ubuntu@ec2-xx-xx-xx-xx.compute-1.amazonaws.com`
 * `--dest` — Destination folder
 * `~/Downloads/test` — Example local destination path
 
@@ -94,6 +94,8 @@ slx client --username user --port 1221
 ```
 
 Once connected, a reverse SSH tunnel is automatically established.
+
+##### `NB: Make sure the port you assigned on the target machine is open in your EC2 instance’s inbound and outbound rules, and ensure SSH is allowed in the security group.`
 
 ---
 
