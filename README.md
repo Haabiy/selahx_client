@@ -70,6 +70,8 @@ slx save --key-file key.pem --user ubuntu --host ec2-xx-xx-xx-xx.compute-1.amazo
 * `--dest` — Destination folder
 * `~/Downloads/test` — Example local destination path
 
+![features](https://raw.githubusercontent.com/Haabiy/selahx_client/main/selahx/assets/ec2_user_host.png)
+
 ---
 
 ## Example Workflow
