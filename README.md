@@ -25,20 +25,6 @@
 
 ## Usage
 
-### Help
-
-```bash
-slx client --help
-````
-
-![features](https://raw.githubusercontent.com/Haabiy/selahx_client/main/selahx/assets/slx_client_help.png)
-
-```bash
-slx save --help
-````
-
-![features](https://raw.githubusercontent.com/Haabiy/selahx_client/main/selahx/assets/slx_client_help.png)
-
 ### Client
 
 Start a client and connect to the server:
@@ -51,6 +37,55 @@ slx client --username user --port 1221
 
 * `--username` — Username for the client session
 * `--port` — Server port to connect to
+
+---
+
+## Example Workflow
+
+1. Launch the server:
+
+- server package: https://pypi.org/project/selahx_server
+
+- github: https://github.com/Haabiy/selahx_server
+
+```bash
+slx --key-file key.pem --port 1221 --ssh-host ubuntu@ec2-xx-xx-xx-xx.compute-1.amazonaws.com
+```
+
+### Help
+
+```bash
+slx client --help
+````
+
+![features](https://raw.githubusercontent.com/Haabiy/selahx_client/main/selahx/assets/slx_client_help.png)
+
+2. Instantiate a client connection using your ec2 instance:
+
+- Login : `ssh -i "key.pem" ubuntu@ec2-xx-xxx-xxx-xxx.compute-1.amazonaws.com`
+
+- Updating package list : `sudo apt update`
+
+- Installation: `sudo apt install -y python3.12 python3.12-venv`
+
+- set up virtual environemnt: `python3.12 -m venv venv`
+
+- Install slx client via : `pip install selahx_client`
+
+```bash
+slx client --username user --port 1221
+```
+
+Once connected, a reverse SSH tunnel is automatically established.
+
+### NB: 
+- Ensure the port you configured on the target machine is open in your EC2 instance’s `inbound` and `outbound` rules, along with `SSH` for remote access.
+
+- Grant Terminal access to the file system and other necessary resources (e.g: camera).
+
+- Ensure your `.pem` file is executable. Check with `ls -l` (e.g., `-rwx------@ 1 Abiy staff 1678 Nov 15 22:36 key.pem`).
+
+- If reverse tunneling fails to forward the connection, kill any active process using the same port. (use `kill $PID`)
 
 ---
 
@@ -73,36 +108,11 @@ i.e
 
 ![features](https://raw.githubusercontent.com/Haabiy/selahx_client/main/selahx/assets/ec2_ssh_host.png)
 
----
-
-## Example Workflow
-
-1. Launch the server:
-
-- server package: https://pypi.org/project/selahx_server
-
-- github: https://github.com/Haabiy/selahx_server
-
 ```bash
-slx --key-file key.pem --port 1221 --ssh-host ubuntu@ec2-xx-xx-xx-xx.compute-1.amazonaws.com
-```
+slx save --help
+````
 
-2. Connect a client from your local machine:
-
-```bash
-slx client --username user --port 1221
-```
-
-Once connected, a reverse SSH tunnel is automatically established.
-
-### NB: 
-- Ensure the port you configured on the target machine is open in your EC2 instance’s `inbound` and `outbound` rules, along with `SSH` for remote access.
-
-- Grant Terminal access to the file system and other necessary resources (e.g: camera).
-
-- Ensure your `.pem` file is executable. Check with `ls -l` (e.g., `-rwx------@ 1 Abiy staff 1678 Nov 15 22:36 key.pem`).
-
-- If reverse tunneling fails to forward the connection, kill any active process using the same port. (use `kill $PID`)
+![features](https://raw.githubusercontent.com/Haabiy/selahx_client/main/selahx/assets/slx_save_help.png)
 
 ---
 
