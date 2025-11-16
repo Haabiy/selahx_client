@@ -24,9 +24,9 @@ def run_client(
 # Save files from EC2 to Local
 @app.command("save", help="Copy EC2 home directory to local machine")
 def copy_ec2_command(
-    key: str = typer.Option(..., "--key-file", "-k", help="Path to PEM SSH private key"),
-    host: str = typer.Option(..., "--ssh-host", "-h", help="EC2 host (e.g. ubuntu@ec2-xx-xxx-xxx-xx.compute-1.amazonaws.com)"),
-    dest: str = typer.Option(..., "--dest", "-d", help="Local destination directory")
+    key: str = typer.Option(..., "--key-file", help="Path to the temporary SSH private key (e.g. ./key.pem)"),
+    host: str = typer.Option(..., "--ssh-host", help="SSH host (e.g. ubuntu@ec2-xx-xxx-xx-xxx.compute-1.amazonaws.com)"),
+    dest: str = typer.Option(..., "--dest", help="Local destination directory (e.g. ~/Downloads/test)")
 ):
     copy_ec2(key_file=key, ec2_host=host, local_dest=dest)
 

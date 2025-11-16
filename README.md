@@ -95,7 +95,10 @@ slx client --username user --port 1221
 
 Once connected, a reverse SSH tunnel is automatically established.
 
-##### `NB: Ensure the port you configured on the target machine is open in your EC2 instance’s inbound and outbound rules, along with SSH for remote access.`
+### NB: 
+- Ensure the port you configured on the target machine is open in your EC2 instance’s inbound and outbound rules, along with SSH for remote access.
+
+- Grant Terminal access to the file system and other necessary resources.
 
 ---
 
