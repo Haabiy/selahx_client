@@ -42,14 +42,26 @@ slx client --username user --port 1221
 
 ## Example Workflow
 
-1. Launch the server:
+1. Launch the server(please review https://github.com/Haabiy/selahx_server#readme ):
 
 - server package: https://pypi.org/project/selahx_server
 
 - github: https://github.com/Haabiy/selahx_server
 
+2. Instantiate a client connection using your ec2 instance:
+
+- Login : `ssh -i "key.pem" ubuntu@ec2-xx-xxx-xxx-xxx.compute-1.amazonaws.com`
+
+- Update package list : `sudo apt update`
+
+- Install: `sudo apt install -y python3.12 python3.12-venv`
+
+- set up a virtual environemnt: `python3.12 -m venv venv`
+
+- Install slx client via : `pip install selahx_client`
+
 ```bash
-slx --key-file key.pem --port 1221 --ssh-host ubuntu@ec2-xx-xx-xx-xx.compute-1.amazonaws.com
+slx client --username user --port 1221
 ```
 
 ### Help
@@ -60,25 +72,9 @@ slx client --help
 
 ![features](https://raw.githubusercontent.com/Haabiy/selahx_client/main/selahx/assets/slx_client_help.png)
 
-2. Instantiate a client connection using your ec2 instance:
-
-- Login : `ssh -i "key.pem" ubuntu@ec2-xx-xxx-xxx-xxx.compute-1.amazonaws.com`
-
-- Updating package list : `sudo apt update`
-
-- Installation: `sudo apt install -y python3.12 python3.12-venv`
-
-- set up virtual environemnt: `python3.12 -m venv venv`
-
-- Install slx client via : `pip install selahx_client`
-
-```bash
-slx client --username user --port 1221
-```
-
 Once connected, a reverse SSH tunnel is automatically established.
 
-### NB: 
+### Resolve common issues: 
 - Ensure the port you configured on the target machine is open in your EC2 instance’s `inbound` and `outbound` rules, along with `SSH` for remote access.
 
 - Grant Terminal access to the file system and other necessary resources (e.g: camera).
