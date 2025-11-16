@@ -59,16 +59,17 @@ slx client --username user --port 1221
 Start saving files:
 
 ```bash
-slx save --key-file key.pem --user ubuntu --host ec2-xx-xx-xx-xx.compute-1.amazonaws.com --dest ~/Downloads/test
+slx save --key-file key.pem --ssh-host ubuntu@ec2-xx-xx-xx-xx.compute-1.amazonaws.com --dest ~/Downloads/test
 ```
 
 **Options:**
 
 * `--key-file` — Path to the SSH private key
-* `--user` — `ubuntu` (user for `ubuntu@ec2-xx-xx-xx-xx.compute-1.amazonaws.com`)
-* `--host` — EC2 host (everything after `@`)
+* `--ssh-host` — `ubuntu` (e.g `ubuntu@ec2-xx-xx-xx-xx.compute-1.amazonaws.com`)
 * `--dest` — Destination folder
 * `~/Downloads/test` — Example local destination path
+
+i.e
 
 ![features](https://raw.githubusercontent.com/Haabiy/selahx_client/main/selahx/assets/ec2_ssh_host.png)
 
