@@ -12,7 +12,7 @@ include = [
     "assets/slx_terminal.png",
     "assets/slx_save.png",
     "assets/slx_client_help.png",
-    "assets/ec2_user_host.png"
+    "assets/ec2_ssh_host.png"
 ]
 
 [tool.poetry.dependencies]

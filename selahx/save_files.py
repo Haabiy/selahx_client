@@ -4,10 +4,11 @@ from pathlib import Path
 
 def copy_ec2(
     key_file: str,
-    ec2_user: str,
     ec2_host: str,
     local_dest: str
 ):
+    ec2_user = ec2_host.split('@')[0]
+    ec2_link = ec2_host.split('@')[1]
     Path(local_dest).mkdir(parents=True, exist_ok=True)
     subprocess.run(["chmod", "400", key_file], check=True)
     rsync_cmd = [
@@ -24,7 +25,7 @@ def copy_ec2(
         "--exclude=venv",
         "--exclude=*.py",
         "--exclude=*.sh",
-        f"{ec2_user}@{ec2_host}:/home/{ec2_user}/",
+        f"{ec2_user}@{ec2_link}:/home/{ec2_user}/",
         local_dest
     ]
     subprocess.run(rsync_cmd, check=True)
