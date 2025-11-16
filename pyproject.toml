@@ -9,7 +9,10 @@ repository = "https://github.com/Haabiy/selahx_client"
 documentation = "https://github.com/Haabiy/selahx_client#readme"
 packages = [{ include = "selahx" }]
 include = [
-    "assets/selahx.png"
+    "assets/slx_terminal.png",
+    "assets/slx_save.png",
+    "assets/slx_client_help.png",
+    "assets/ec2_user_host.png"
 ]
 
 [tool.poetry.dependencies]
