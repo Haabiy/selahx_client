@@ -58,6 +58,8 @@ slx client --username user --port 1221
 
 - set up a virtual environemnt: `python3.12 -m venv venv`
 
+- Activate environment: `source venv/bin/activate`
+
 - Install slx client via : `pip install selahx_client`
 
 ```bash
