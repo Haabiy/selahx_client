@@ -56,7 +56,7 @@ slx client --username user --port 1221
 
 - Install: `sudo apt install -y python3.12 python3.12-venv`
 
-- set up a virtual environemnt: `python3.12 -m venv venv`
+- Set up a virtual environemnt: `python3.12 -m venv venv`
 
 - Activate environment: `source venv/bin/activate`
 
